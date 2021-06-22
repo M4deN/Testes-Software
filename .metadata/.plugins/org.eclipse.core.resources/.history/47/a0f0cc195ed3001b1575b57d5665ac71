@@ -1,0 +1,14 @@
+package Pack1;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class UtilTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}
