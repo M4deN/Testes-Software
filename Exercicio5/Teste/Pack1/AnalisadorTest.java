@@ -17,7 +17,7 @@ class AnalisadorTest {
 	}
 	
 	@Test
-	void Teste2()throws Exception {
+	void TestePolarizado()throws Exception {
 		Analisador analisador = new Analisador();
 		ArrayList<Candidato> candidatos = new ArrayList<Candidato>();
 		candidatos.add(new Candidato ('F',30));
@@ -31,7 +31,7 @@ class AnalisadorTest {
 	}
 	
 	@Test
-	void Teste3()throws Exception {
+	void TesteMaisMulheres()throws Exception {
 		Analisador analisador = new Analisador();
 		ArrayList<Candidato> candidatos = new ArrayList<Candidato>();
 		candidatos.add(new Candidato ('F',30));
