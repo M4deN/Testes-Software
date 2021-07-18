@@ -1,0 +1,117 @@
+package inicial;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import static org.mockito.Mockito.*;
+
+class TurmasTest {
+
+	@Test
+	void testTurmaSalva() {
+		VerificadorDeCodigos verificadormock = mock (VerificadorDeCodigos.class);
+		when(verificadormock.verificarCodigoDisciplina("IF66J")).thenReturn(true);
+		when(verificadormock.verificarCodigoTurma("ES51")).thenReturn(true);
+		
+		TurmaDAO turmaDAOmock = mock(TurmaDAO.class);
+		when(turmaDAOmock.existe(any())).thenReturn(false);
+		when(turmaDAOmock.salvar(any())).thenReturn(true);
+		
+		TurmaController controller = new TurmaController(turmaDAOmock);
+		controller.setVerificador(verificadormock);
+		
+		
+		Turma turma = new Turma();
+		turma.setcodTurma("ES51");
+		turma.setcodDisciplina("IF66J");
+		turma.setmaximoAlunos(44);
+		String resultado = controller.cadastrarTurma(turma);
+		assertEquals("turma salva com sucesso", resultado);
+	}
+	
+	@Test
+	void testCodigoDisciplinaInvalido() {
+		VerificadorDeCodigos verificadormock = mock (VerificadorDeCodigos.class);
+		
+		when(verificadormock.verificarCodigoDisciplina("IF66J")).thenReturn(false);
+	
+		TurmaDAO turmaDAOmock = mock(TurmaDAO.class);
+		when(turmaDAOmock.existe(any())).thenReturn(false);
+		when(turmaDAOmock.salvar(any())).thenReturn(true);
+		
+		TurmaController controller = new TurmaController(turmaDAOmock);
+		controller.setVerificador(verificadormock);
+		
+		Turma turma = new Turma();
+		turma.setcodDisciplina(" ");
+		String resultado = controller.cadastrarTurma(turma);
+		assertEquals("codigo disciplina invalido", resultado);
+		
+	}
+	@Test
+	void testCodigoTurmaInvalido() {
+		VerificadorDeCodigos verificadormock = mock (VerificadorDeCodigos.class);
+		
+		when(verificadormock.verificarCodigoDisciplina("IF66J")).thenReturn(true);
+		when(verificadormock.verificarCodigoTurma("ES51")).thenReturn(false);
+		
+		TurmaDAO turmaDAOmock = mock(TurmaDAO.class);
+		when(turmaDAOmock.existe(any())).thenReturn(false);
+		when(turmaDAOmock.salvar(any())).thenReturn(true);
+		
+		TurmaController controller = new TurmaController(turmaDAOmock);
+		controller.setVerificador(verificadormock);
+		
+		Turma turma = new Turma();
+		turma.setcodTurma(" ");
+		turma.setcodDisciplina("IF66J");
+		String resultado = controller.cadastrarTurma(turma);
+		assertEquals("codigo turma invalido", resultado);
+		
+	}
+	@Test
+	void testCodigoTurmaExiste() {
+		VerificadorDeCodigos verificadormock = mock (VerificadorDeCodigos.class);
+		
+		when(verificadormock.verificarCodigoDisciplina("IF66J")).thenReturn(true);
+		when(verificadormock.verificarCodigoTurma("ES51")).thenReturn(true);
+		
+		TurmaDAO turmaDAOmock = mock(TurmaDAO.class);
+		when(turmaDAOmock.existe(any())).thenReturn(true);
+		when(turmaDAOmock.salvar(any())).thenReturn(true);
+		
+		TurmaController controller = new TurmaController(turmaDAOmock);
+		controller.setVerificador(verificadormock);
+		
+		Turma turma = new Turma();
+		turma.setcodTurma("ES51");
+		turma.setcodDisciplina("IF66J");
+		turma.setmaximoAlunos(44);
+		String resultado = controller.cadastrarTurma(turma);
+		assertEquals("turma ja existe", resultado);
+		
+	}
+	@Test
+	void testErroNoBD() {
+		VerificadorDeCodigos verificadormock = mock (VerificadorDeCodigos.class);
+		
+		when(verificadormock.verificarCodigoDisciplina("IF66J")).thenReturn(true);
+		when(verificadormock.verificarCodigoTurma("ES51")).thenReturn(true);
+		
+		TurmaDAO turmaDAOmock = mock(TurmaDAO.class);
+		when(turmaDAOmock.existe(any())).thenReturn(false);
+		when(turmaDAOmock.salvar(any())).thenReturn(false);
+		
+		TurmaController controller = new TurmaController(turmaDAOmock);
+		controller.setVerificador(verificadormock);
+		
+		Turma turma = new Turma();
+		turma.setcodTurma("ES51");
+		turma.setcodDisciplina("IF66J");
+		turma.setmaximoAlunos(30);
+		String resultado = controller.cadastrarTurma(turma);
+		assertEquals("turma nao salva. Erro no BD", resultado);
+		
+	}
+}
