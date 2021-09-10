@@ -2,7 +2,7 @@
  
 #### Repository created for sharing exercises performed in the software testing discipline.
 #### In the software testing discipline we start by seeing assertions in simple unit tests, as well as their particularities as float assertions using delta and other return types.
-* Then we move to mocking using the mockito framework with jUnit5, using mockito always aiming to mock more than one interface, for better handling of the tested class.
+* Then we move to mocking using the **mockito** framework with jUnit5, using mockito always aiming to mock more than one interface, for better handling of the tested class.
 * Then we started with white box tests and coverage criteria with line coverage and then branch coverage.
 * We still go through mutation tests followed by analyzing and implementing tests for the detection of mutants.
 * Soon after we started with black box tests, using equivalence classes and threshold analysis.
