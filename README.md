@@ -1,6 +1,5 @@
 # Software Testing.
  
 #### Repository created for sharing exercises performed in the software testing discipline.
-#### Starting with simple assertions, in the Exercicio1, Exercicio2, Exercicio3 folders.
-#### In the folders, exerciciomocking, exerciciomocking1, exerciciomocking2 are files using mocking for unimplemented interfaces
+#### In the software testing discipline we start by seeing assertions in simple unit tests, as well as their particularities as float assertions using delta and other return types.
 
