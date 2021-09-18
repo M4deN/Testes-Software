@@ -1,7 +1,0 @@
-package MockingEX10;
-
-public interface Logger {
-	
-	public boolean logTRansformation(String originalMessage, String modifiedMesssage);
-	
-}
