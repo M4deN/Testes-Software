@@ -1,0 +1,6 @@
+package MockingEX10;
+
+public interface Helper {
+	
+	public String[] gertCensoredWorlds();
+}
