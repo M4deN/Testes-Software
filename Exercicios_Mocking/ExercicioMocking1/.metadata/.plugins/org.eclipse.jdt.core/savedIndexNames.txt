@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+/home/charlie/Documentos/Teste/ExercicioMocking1/.metadata/.plugins/org.eclipse.jdt.core
+3706544397.index
+1096855610.index
+1805658813.index
+1201558522.index
