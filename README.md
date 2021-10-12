@@ -11,6 +11,4 @@
 * The next was system tests using the selenium webdriver framework, where tests were generated for different sites with assertions and without as well.
 * And Finally, model-based testing, which consists of analyzing a model (normally a machine state diagram) and generating test cases from it.
 * All tests were developed using the Eclipse tool
-### Discipline Menu 
 
-![Começo](https://github.com/AlexDeSaran/Testes-Software/blob/main/Ementa.PNG)
