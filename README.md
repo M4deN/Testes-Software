@@ -1,6 +1,6 @@
 ### Software Testing.
  
-#### Repository created for sharing exercises performed in the software testing discipline.
+#### Repository created for sharing exercises performed in the software testing discipline ministred for https://github.com/andreendo
 #### In the software testing discipline we start by seeing assertions in simple unit tests, as well as their particularities as float assertions using delta and other return types.
 - :heavy_check_mark: Then we move to mocking using the **mockito** framework with jUnit5, using mockito always aiming to mock more than one interface, for better handling of the tested class.
 - :heavy_check_mark: Then we started with white box tests and coverage criteria with line coverage and then branch coverage.
